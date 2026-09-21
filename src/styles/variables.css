@@ -1,0 +1,46 @@
+:root {
+  /* Primary Colors */
+  --navy-deep: #062B49;
+  --navy-dark: #082E4F;
+  --navy: #0A3557;
+  --navy-light: #0E4068;
+  --gold: #C9A44A;
+  --gold-light: #D4B56A;
+  --gold-muted: #B8943F;
+  --off-white: #F7F6F2;
+  --white: #FFFFFF;
+  --charcoal: #1A1A1A;
+  --text-dark: #1E2A3A;
+  --text-muted: #5A6A7A;
+  --border-light: #E8E6E1;
+  --shadow: rgba(6, 43, 73, 0.08);
+  --shadow-hover: rgba(6, 43, 73, 0.15);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --section-padding: 5rem 0;
+  --container-max: 1200px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index */
+  --z-navbar: 1000;
+  --z-modal: 2000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0.01ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

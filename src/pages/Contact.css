@@ -1,0 +1,93 @@
+.contact-page .page-hero {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  padding: 8rem 0 4rem;
+  text-align: center;
+}
+.contact-page .page-hero .section-label { color: var(--gold); }
+.contact-page .page-hero__title { font-size: clamp(2rem, 4vw, 2.75rem); color: var(--white); margin-bottom: 1rem; }
+.contact-page .page-hero__subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+.contact-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-card {
+  background: var(--off-white);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+.contact-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: var(--navy-deep);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy-deep);
+  margin-bottom: 0.35rem;
+  transition: color var(--transition);
+}
+
+.contact-card a:hover { color: var(--gold); }
+
+.contact-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.contact-card__loc {
+  font-weight: 600;
+  color: var(--navy-deep) !important;
+  font-size: 1.05rem !important;
+}
+
+.contact-page__cta {
+  text-align: center;
+  background: var(--off-white);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  border: 1px solid var(--border-light);
+}
+
+.contact-page__cta h2 {
+  margin-bottom: 0.75rem;
+}
+
+.contact-page__cta p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .contact-page__grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
