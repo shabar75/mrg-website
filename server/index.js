@@ -334,7 +334,6 @@
 
 
 
-
 import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
@@ -456,7 +455,7 @@ function escapeHtml(str) {
 }
 
 // ============================================================
-// Routes
+// API Routes
 // ============================================================
 
 app.get('/api/health', (_req, res) => {
@@ -594,13 +593,30 @@ ${message.trim()}
   }
 });
 
-app.use((_req, res) => {
+// ============================================================
+// Serve React frontend (Vite build output)
+// ============================================================
+const distPath = path.join(__dirname, '../dist');
+
+app.use(express.static(distPath));
+
+// SPA fallback for React Router — all non-API routes serve index.html
+app.get(/^(?!\/api).*/, (req, res, next) => {
+  if (req.method !== 'GET') return next();
+  res.sendFile(path.join(distPath, 'index.html'), (err) => {
+    if (err) next(err);
+  });
+});
+
+// API 404
+app.use('/api', (_req, res) => {
   res.status(404).json({
     success: false,
     message: 'Endpoint not found',
   });
 });
 
+// Global error handler
 app.use((err, _req, res, _next) => {
   console.error('[Global Error]', err);
   res.status(500).json({
@@ -609,7 +625,10 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-app.listen(PORT, () => {
+// ============================================================
+// Start server — bind to 0.0.0.0 for GoDaddy / cloud hosts
+// ============================================================
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`
 ╔════════════════════════════════════════╗
 ║      MRG API Server Started            ║
