@@ -42,7 +42,7 @@ export default function Footer() {
             <ul className="footer__contact">
               <li>
                 <Phone size={16} />
-                <a href="tel:+919088000911">+91 90880 00911</a>
+                <a href="tel:+919086000911">+91 90880 00911</a>
               </li>
               <li>
                 <Mail size={16} />
