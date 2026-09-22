@@ -76,6 +76,6 @@ For production, serve the `dist/` folder and run the Express server (or mount th
 
 ## Contact info used on site
 
-- Phone: +91 90880 00911
+- Phone: +91 9086000911
 - Email: info@mrgsolutions.in
 - Location: Srinagar, Jammu & Kashmir (Serving clients across India)
